@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#17131e" />
+<title>UK AI Video Edit</title>
+<style>
+:root{color-scheme:dark;--bg:#100d16;--panel:#1d1727;--line:#3b304b;--text:#fff;--muted:#c4b8d2;--accent:#8b5cf6}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#171020,#0d0b12);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:520px;margin:auto;padding:20px 16px 40px}.brand{font-size:25px;font-weight:850;letter-spacing:-.5px;margin:4px 0}.sub{color:var(--muted);margin:0 0 20px;font-size:14px}
+.panel{background:var(--panel);border:1px solid var(--line);padding:14px;border-radius:18px;margin:14px 0}.label{display:block;font-weight:700;margin:4px 0 9px}input[type=file],select{width:100%;padding:12px;border:1px solid var(--line);border-radius:11px;background:#15111c;color:#fff}
+.preview{height:min(68vh,480px);min-height:280px;background:#09080c;border-radius:14px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+canvas{max-width:100%;max-height:100%;height:100%;width:auto;aspect-ratio:9/16;object-fit:contain}
+button,.download{display:block;width:100%;padding:14px;border:0;border-radius:13px;background:linear-gradient(100deg,#7c3aed,#db2777);color:white;font-size:16px;font-weight:800;text-align:center;text-decoration:none;margin-top:14px}
+button:disabled{opacity:.55}.small{font-size:12px;color:var(--muted);line-height:1.5}.status{font-size:13px;color:#e9d5ff;min-height:22px;margin:12px 0}.chips{display:grid;grid-template-columns:1fr 1fr;gap:9px}.chip{padding:11px;border:1px solid var(--line);border-radius:12px;background:#17111f;color:#fff;text-align:center;font-weight:650}.chip.active{border-color:#c084fc;background:#35204b}
+</style>
+</head>
+<body>
+<main>
+  <h1 class="brand">🎬 UK AI Video Edit</h1>
+  <p class="sub">ಒಂದು ಫೋಟೋ → 30 ಸೆಕೆಂಡ್ ವಿಡಿಯೋ</p>
+  <section class="panel">
+    <label class="label" for="photo">1. ನಿಮ್ಮ ಫೋಟೋ ಆಯ್ಕೆ ಮಾಡಿ</label>
+    <input id="photo" type="file" accept="image/*" />
+  </section>
+  <div class="preview"><canvas id="canvas" width="720" height="1280"></canvas></div>
+  <section class="panel">
+    <label class="label">2. ವಿಡಿಯೋ ಸ್ಟೈಲ್ ಆಯ್ಕೆ ಮಾಡಿ</label>
+    <div class="chips">
+      <button class="chip active" data-style="love" type="button">❤️ Love Story</button>
+      <button class="chip" data-style="cinema" type="button">🎥 Cinematic</button>
+      <button class="chip" data-style="mass" type="button">🔥 Mass</button>
+      <button class="chip" data-style="birthday" type="button">🎂 Birthday</button>
+    </div>
+    <label class="label" for="song" style="margin-top:16px">3. ಹಾಡು ಸೇರಿಸಿ (ಐಚ್ಛಿಕ)</label>
+    <input id="song" type="file" accept="audio/*" />
+    <button id="make" type="button">✨ 30 ಸೆಕೆಂಡ್ ವಿಡಿಯೋ ರೆಡಿ ಮಾಡಿ</button>
+    <p class="status" id="status" role="status">ಮೊದಲು ಫೋಟೋ ಆಯ್ಕೆ ಮಾಡಿ.</p>
+    <a id="download" class="download" hidden>⬇️ ವಿಡಿಯೋ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ</a>
+  </section>
+  <p class="small">ಈ ಆರಂಭಿಕ ಆವೃತ್ತಿ ಫೋಟೋಗೆ ಜೂಮ್ ಮತ್ತು ಸ್ಟೈಲ್ ಟೆಕ್ಸ್ಟ್ ಸೇರಿಸಿ 30 ಸೆಕೆಂಡ್ WebM ವಿಡಿಯೋ ಮಾಡುತ್ತದೆ. ನಿಜವಾದ AI ಮುಖದ ಚಲನೆ ಮತ್ತು MP4 ಎಕ್ಸ್‌ಪೋರ್ಟ್ ಇನ್ನೂ ಸೇರಿಲ್ಲ. ನಿಮ್ಮದೇ ಅಥವಾ ಬಳಸಲು ಅನುಮತಿ ಇರುವ ಹಾಡುಗಳನ್ನು ಮಾತ್ರ ಬಳಸಿ.</p>
+</main>
+<script type="module" src="/src.js"></script>
+</body></html>
